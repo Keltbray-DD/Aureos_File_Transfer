@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.aureos.com/wp-content/uploads/2025/02/AUREOS-FAVicon_512px-x-512px-150x150.png" sizes="32x32">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/createTransfer.css">
+    <script src="js/variables.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/createTransfer.js"></script>
+    <script src="js/ACCUpload.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Leaflet CSS -->
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <title>Aureos File Transfer Portal</title>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="https://www.aureos.com/wp-content/themes/keltbray/assets/img/logo/AUREOS_logo_wh.svg" 
+        class="logo logo--white" 
+        alt="Aureos Logo">
+        <div class="title"><h2>Temporary File Transfer Portal</h2></div>
+        <div class="profile-container" id="profileMenu">
+          <img id="userPic" src="https://images.profile.autodesk.com/default/user_X58.png" alt="Profile" class="profile-pic" />
+          <div class="dropdown-menu" id="dropdown">
+            <div ><strong>User:</strong> <p id="userName"></p></div>
+            <div ><strong>Email:</strong> <p id="userEmail"></p></div>
+            <div class="logout" onclick="logout()">Logout</div>
+          </div>
+        </div>
+      </div>
+    <div class="container">
+        <h1>Create File Transfer</h1>
+        <p style="width: 90%; margin: auto;">This tool is intented for Temporary file transfer, any formal file transfer to client of project data please contact your projects Document Controller to formally transmit the data</p>
+    </div>
+    <div class="columnContainer">
+        <div class="container fade-in column">
+            <h3>Please upload the files you want to transfer via the the upload box below</h3>
+            <div class="drop-zone" id="drop-zone">
+                <p>Drag and drop files here or click to upload</p>
+                <input type="file" id="file-input" multiple>
+              </div>
+              <div id="file-list"></div>
+        </div>
+        <div class="container fade-in column">
+            <h3>Transfer Details</h3>
+            <form id="transferForm">
+                <label for="transferTitle">Transfer Title:</label>
+                <input type="text" id="transferTitle" name="transferTitle" placeholder="Enter transfer title" required>
+                <!-- 
+                     Using type="email" with the multiple attribute allows users to enter comma separated email addresses. 
+                     Note: Some browsers may not fully validate multiple email addresses.
+                -->
+                <label for="recipients">Intended Recipients (Email Addresses):</label>
+                <div class="email-tags" id="emailTags">
+                  <input type="text" id="recipientInput" placeholder="Enter email and press Enter or comma">
+                </div>
+                <label for="expiry">Expiry Duration (in days):</label>
+                <select id="expiry" name="expiry" required>
+                  <option value="" disabled selected>Select expiry duration</option>
+                  <option value="3">3 Days</option>
+                  <option value="5">5 Days</option>
+                  <option value="7">7 Days</option>
+                  <!-- You can add more options as needed -->
+                </select>
+                <label for="security">Additional Security:</label>
+                <select id="security" name="security" required>
+                  <option value="" disabled selected>Select Authentication</option>
+                  <option value="1">None</option>
+                  <option value="2">2 Factor Authentication</option>
+                </select>
+                <button type="submit" id="submitButton">Submit Transfer</button>
+              </form>
+        </div>
+    </div>
+    <!-- Modal Structure -->
+    <div id="uploadModal" class="modal">
+        <div class="modal-content">
+            <p>Your transfer has been cretaed and the intended recipients have been notified.</p>
+            <p>To create another transfer click the button below</p>
+            <button type="button" onclick="location.href='createTransfer.html'">Submit new transfer</button>
+        </div>
+    </div>
+
+    <div id="appInfo"></div>
+
+
+</body>
+</html>

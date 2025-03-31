@@ -1,0 +1,71 @@
+input[type="email"],
+input[type="password"],
+input[type="text"],
+select {
+  width: 95%;
+  padding: 8px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+button[type="button"],
+button[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #007acc;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 95%;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Package summary styling */
+#packageSummary {
+    width: 95%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  #packageSummary h2 {
+    margin: 0 0 10px;
+  }
+
+  /* Table styling */
+  table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 10px;
+  }
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #f2f2f2;
+  }
+  img.thumbnail {
+    width: 50px;
+    height: auto;
+  }
+  .download-btn {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+
+  #errorMessage{
+    color: red;
+  }
